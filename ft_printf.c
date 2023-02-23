@@ -6,12 +6,18 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:51:04 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/21 09:43:44 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/22 15:32:22 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
+
+void	ft_proc_per(const char **start, const char **fmt, int *n, va_list *ap)
+{
+	(*fmt)++;
+	
+}
 
 void	ft_print_str(const char **start, const char **fmt, int *n)
 {
@@ -31,12 +37,13 @@ int ft_printf(const char *fmt, ...)
 	va_start(ap, fmt);
 	if (fmt == NULL)
 		n = -1;
-	while (n > 0 && *fmt)
+	while (n >= 0 && *fmt)
 	{
 		start = fmt;
 		if (*start != '%')
 			ft_print_str(&start, &fmt, &n);
 		else
+			return (0);
 			ft_proc_per(&start, &fmt, &n, &ap);
 	}
 	va_end(ap);
@@ -56,11 +63,12 @@ int ft_printf(const char *fmt, ...)
 // 	va_end(ap);
 // }
 
-// int main(void)
-// {
-// 	char *arg_1 = "aaaa";
-// 	int arg_2 = 5;
-// 	double arg_3 = 3.14;
+int main(void)
+{
+	// char *arg_1 = "aaaa";
+	// int arg_2 = 5;
+	// double arg_3 = 3.14;
 	
-// 	ft_printf(arg_1, arg_2, arg_3);
-// }
+	// ft_printf(arg_1, arg_2, arg_3);
+	ft_printf("abcd");
+}
