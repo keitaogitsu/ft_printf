@@ -6,7 +6,7 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:51:04 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/23 17:14:00 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:44:37 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_proc_per(const char **start, const char **fmt, int *n, va_list *ap)
 		ft_print_s(fmt, n, ap);
 	if (**fmt == 'd' || **fmt == 'i')
 		ft_print_int(fmt, n, ap);
+	if (**fmt == 'u')
+		ft_print_unint(fmt, n, ap);
 }
 
 void	ft_print_str(const char **start, const char **fmt, int *n)
@@ -75,5 +77,5 @@ int	main(void)
 
 	// ft_printf(arg_1, arg_2, arg_3);
 	ft_printf("abcd%cfg%slmn\n", 'e', "hijk");
-	ft_printf("ab%dcde%ifg\n", 100, 4321);
+	ft_printf("ab%dcde%ufg\n", INT_MIN, UINT_MAX);
 }
