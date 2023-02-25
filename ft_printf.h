@@ -6,7 +6,7 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:58:49 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/24 11:45:00 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/25 20:39:32 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ size_t	ft_strlen(const char *s);
 void	ft_print_int(const char **fmt, int *n, va_list *ap);
 void	ft_putchar(char c);
 void	ft_print_unint(const char **fmt, int *n, va_list *ap);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+void	ft_print_hexa(const char **fmt, int *n, va_list *ap);
 
 #endif

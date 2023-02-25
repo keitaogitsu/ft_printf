@@ -6,7 +6,7 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:51:04 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/24 11:44:37 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/25 21:18:24 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	ft_proc_per(const char **start, const char **fmt, int *n, va_list *ap)
 		ft_print_int(fmt, n, ap);
 	if (**fmt == 'u')
 		ft_print_unint(fmt, n, ap);
+	if (**fmt == 'x' || **fmt == 'X')
+		ft_print_hexa(fmt, n, ap);
+	if (**fmt == 'p')
+		ft_print_pointer(fmt, n, ap);
 }
 
 void	ft_print_str(const char **start, const char **fmt, int *n)
@@ -76,6 +80,7 @@ int	main(void)
 	// double arg_3 = 3.14;
 
 	// ft_printf(arg_1, arg_2, arg_3);
-	ft_printf("abcd%cfg%slmn\n", 'e', "hijk");
-	ft_printf("ab%dcde%ufg\n", INT_MIN, UINT_MAX);
+	// ft_printf("abcd%cfg%slmn\n", 'e', "hijk");
+	// ft_printf("ab%dcde%ufg\n", INT_MIN, UINT_MAX);
+	ft_printf("%x||%X\n", 88888831, 88888831);
 }
