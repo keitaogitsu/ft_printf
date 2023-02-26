@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 14:20:23 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/26 14:01:18 by kogitsu          ###   ########.fr       */
+/*   Created: 2023/02/26 14:23:33 by kogitsu           #+#    #+#             */
+/*   Updated: 2023/02/26 15:16:21 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_c(const char **fmt, int *n, va_list *ap)
+ssize_t	ft_putstr(char *s)
 {
-	char	c;
+	size_t	i;
+	int		putchar;
 	int		putsize;
 
-	c = (char)va_arg(*ap, int);
-	putsize = ft_putchar(c);
-	if (putsize == -1)
-		*n = -1;
-	else
-		*n += putsize;
-	(*fmt)++;
+	i = 0;
+	putsize = 0;
+	while (s[i])
+	{
+		putchar = ft_putchar(s[i]);
+		if (putchar == -1)
+		{
+			putsize = -1;
+			break ;
+		}
+		else
+			putsize += putchar;
+		i++;
+	}
+	return (putsize);
 }

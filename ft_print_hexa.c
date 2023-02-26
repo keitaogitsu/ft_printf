@@ -6,7 +6,7 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:09:26 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/25 21:10:11 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/26 15:13:14 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,21 @@ static void	ft_put_hexanbr(char *base, unsigned int num, int *n)
 		ft_put_hexanbr(base, num % 16, n);
 	}
 	else
-	{
-		ft_putchar(base[num]);
-		(*n)++;
-	}
+		*n += ft_putchar(base[num]);
 }
 
 static void	ft_put_small_hexa(unsigned int num, int *n)
 {
-	int		i;
 	char	hexa_s[17];
 
-	i = 0;
 	ft_strlcpy(hexa_s, "0123456789abcdef", 17);
 	ft_put_hexanbr(hexa_s, num, n);
 }
 
-static void ft_put_large_hexa(unsigned int num, int *n)
+static void	ft_put_large_hexa(unsigned int num, int *n)
 {
-	int		i;
 	char	hexa_l[17];
 
-	i = 0;
 	ft_strlcpy(hexa_l, "0123456789ABCDEF", 17);
 	ft_put_hexanbr(hexa_l, num, n);
 }

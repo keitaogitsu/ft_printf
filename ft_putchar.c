@@ -6,13 +6,13 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:45:50 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/23 16:47:01 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/26 13:44:34 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+ssize_t	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c.c                                       :+:      :+:    :+:   */
+/*   ft_print_per.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 14:20:23 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/26 14:01:18 by kogitsu          ###   ########.fr       */
+/*   Created: 2023/02/26 16:01:17 by kogitsu           #+#    #+#             */
+/*   Updated: 2023/02/26 16:12:48 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_c(const char **fmt, int *n, va_list *ap)
+void	ft_print_per(const char **fmt, int *n)
 {
-	char	c;
-	int		putsize;
+	int	putsize;
 
-	c = (char)va_arg(*ap, int);
-	putsize = ft_putchar(c);
+	putsize = ft_putchar('%');
 	if (putsize == -1)
 		*n = -1;
 	else

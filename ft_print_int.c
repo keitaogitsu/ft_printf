@@ -6,7 +6,7 @@
 /*   By: kogitsu <kogitsu@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:06:49 by kogitsu           #+#    #+#             */
-/*   Updated: 2023/02/24 11:30:23 by kogitsu          ###   ########.fr       */
+/*   Updated: 2023/02/26 14:58:23 by kogitsu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ static void	ft_putnbr(int num, int *n)
 	{
 		if (num == INT_MIN)
 		{
-			ft_putchar('-');
-			ft_putchar((char)(2 + '0'));
-			*n += 2;
+			*n += ft_putstr("-2");
 			num = 147483648;
 		}
 		else
 		{
-			ft_putchar('-');
+			*n += ft_putchar('-');
 			num = -num;
 		}
 	}
@@ -35,10 +33,7 @@ static void	ft_putnbr(int num, int *n)
 		ft_putnbr(num % 10, n);
 	}
 	else
-	{
-		ft_putchar((char)(num + '0'));
-		(*n)++;
-	}
+		*n += ft_putchar((char)(num + '0'));
 }
 
 void	ft_print_int(const char **fmt, int *n, va_list *ap)
